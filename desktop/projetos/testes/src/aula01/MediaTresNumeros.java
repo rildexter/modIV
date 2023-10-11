@@ -1,9 +1,10 @@
 package aula01;
+
 public class MediaTresNumeros {
     public static void main(String[] args) {
-        double numero1 = 5.5;
+        double numero1 = 9;
         double numero2 = 8.0;
-        double numero3 = 7.3;
+        double numero3 = 10;
 
         double media = (numero1 + numero2 + numero3) / 3;
 
