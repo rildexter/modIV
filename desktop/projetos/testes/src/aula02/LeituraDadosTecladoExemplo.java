@@ -1,6 +1,7 @@
+package aula02;
 import java.util.Scanner;
 
-public class teste{
+public class LeituraDadosTecladoExemplo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -8,7 +9,8 @@ public class teste{
         int numero = scanner.nextInt();
         
         System.out.println("Número digitado: " + numero);
-                // Fechando o Scanner
-                scanner.close();
+    // Fechando o Scanner
+        scanner.close();
     }
+
 }

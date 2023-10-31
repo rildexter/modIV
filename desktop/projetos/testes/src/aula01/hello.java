@@ -3,7 +3,6 @@ class hello{
     public static void main(String[] args) {
         int idade = 18;
         boolean temPermissao = true;
-
 if (temPermissao) {
     if (idade >= 18) {
         System.out.println("Você pode entrar na festa.");

@@ -1,0 +1,87 @@
+Declaração condicional
+---------------------------------------
+let idade = 18;
+if (idade >= 18) {console.log("Você é maior de idade.");
+} else {
+  console.log("Você é menor de idade.");
+}
+
+---------------------------------------
+else - Tratando casos alternativos
+---------------------------------------
+
+let numero = 5;
+if (numero === 5) {
+  console.log("O número é igual a 5.");
+} else {
+  console.log("O número não é igual a 5.");
+}
+
+
+---------------------------------------
+For - Exemplo prático 
+---------------------------------------
+
+for (let i = 1; i <= 5; i++) {
+  console.log(`Contagem: ${i}`);
+}
+---------------------------------------
+while - Loop com Teste no Início
+---------------------------------------
+let contador = 0;
+while (contador < 3) {
+  console.log(`Contador: ${contador}`);
+  contador++;
+}
+---------------------------------------
+do...while - Loop com Teste no Final
+---------------------------------------
+let x = 1;
+do {
+  console.log(`Número: ${x}`);
+  x++;
+} while (x <= 3);
+
+---------------------------------------
+Escopo Local e Global
+---------------------------------------
+let globalVar = "Eu sou global";
+function exemploEscopo() {
+  let localVar = "Eu sou local";
+  console.log(globalVar); // Acesso a variável global
+  console.log(localVar);  // Acesso a variável local
+}
+exemploEscopo();
+---------------------------------------
+ARRAYS
+---------------------------------------
+
+let frutas = ["maçã", "banana", "laranja"];
+console.log(frutas[0]); // Acessando o primeiro elemento do array
+
+---------------------------------------
+ARRAYS - metodos
+---------------------------------------
+let numeros = [1, 2, 3, 4, 5];
+numeros.push(6); // Adiciona 6 ao final do array
+console.log(numeros); // [1, 2, 3, 4, 5, 6]
+---------------------------------------
+Objetos
+---------------------------------------
+let pessoa = {
+  nome: "João",
+  idade: 25,
+};
+console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}`);
+---------------------------------------
+Metodos de objetos
+---------------------------------------
+
+let carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ligar: function () {
+    console.log("Carro ligado.");
+  },
+};
+carro.ligar(); // Chama o método ligar do objeto carro
