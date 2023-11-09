@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page</title>
+</head>
+<body>
+<p>Este é um parágrafo.</p>
+<p>Este é outro parágrafo.</p>
+<p>Este é um parágrafo.</p>
+
+    <script>
+        // Seleciona todos os parágrafos
+        const paragrafos = document.getElementsByTagName('p');
+
+        // Itera sobre os parágrafos e modifica o texto
+        for (let i = 0; i < paragrafos.length; i++) {
+            paragrafos[i].textContent = `novo paragrafo ${i + 1}`;
+        }
+    </script>
+</body>
+</html>

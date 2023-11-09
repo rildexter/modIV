@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>page</title>
+</head>
+<body> 
+<ul>
+  <li class="item">Item 1</li>
+  <li class="item">Item 2</li>
+  <li class="item">Item 3</li>
+</ul>
+ <script>
+// Seleciona todos os elementos com a classe "item" e modifica seus conteúdos
+const elementos = document.getElementsByClassName('item');
+for (let i = 0; i < elementos.length; i++) {
+  elementos[i].textContent = 'Texto modificado pela classe';
+} </script>
+</body>
+</html>

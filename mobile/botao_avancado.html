@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selecionando Elemento por ID</title>
+</head>
+<body>
+    <button id="meuBotao">Aperte aqui</button>
+    <div id="meuId">Primeiro texto</div>
+    <script>
+    const meuBotao = document.getElementById('meuBotao');
+    meuBotao.addEventListener('click', function() {
+// Seleciona o elemento por ID
+const meuParagrafo = document.getElementById('meuId');
+// Modifica o conteúdo usando textContent
+    meuParagrafo.textContent = 'Apertou o botão!';
+});
+    </script>
+</body>
+</html>

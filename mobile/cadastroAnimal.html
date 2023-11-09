@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Animais</title>
+</head>
+<body>
+    <h1>Cadastro de Animais</h1>
+
+    <form id="animalForm">
+        <label for="animalType">Escolha o tipo de animal:</label>
+        <select id="animalType" name="animalType" onchange="mostrarAtributos()">
+            <option value="">Escolha um animal</option>
+            <option value="Cachorro">Cachorro</option>
+            <option value="Gato">Gato</option>
+        </select>
+        <br>
+
+        <label for="name">Nome do Animal:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <div id="cachorroAttributes" style="display: none;">
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" name="raca">
+            <br>
+        </div>
+
+        <div id="gatoAttributes" style="display: none;">
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" name="cor">
+            <br>
+        </div>
+
+        <input type="button" value="Cadastrar Animal" onclick="cadastrarAnimal()">
+    </form>
+
+    <h2>Animais Cadastrados:</h2>
+    <ul id="animalList"></ul>
+
+    <script>
+      function mostrarAtributos() {
+    const selectedAnimal = document.getElementById("animalType").value;
+    document.getElementById("cachorroAttributes").style.display = selectedAnimal === "Cachorro" ? "block" : "none";
+    document.getElementById("gatoAttributes").style.display = selectedAnimal === "Gato" ? "block" : "none";
+}
+
+function cadastrarAnimal() {
+    const selectedAnimal = document.getElementById("animalType").value;
+    const name = document.getElementById("name").value;
+    const attributes = {};
+
+    if (selectedAnimal === "Cachorro") {
+        attributes.raca = document.getElementById("raca").value;
+    } else if (selectedAnimal === "Gato") {
+        attributes.cor = document.getElementById("cor").value;
+    }
+
+    const animalList = document.getElementById("animalList");
+    const listItem = document.createElement("li");
+
+    let formattedAttributes = "";
+    for (const key in attributes) {
+        formattedAttributes += `${key}: ${attributes[key]}, `;
+    }
+    formattedAttributes = formattedAttributes.slice(0, -2); // Remova a última vírgula e espaço
+
+    listItem.textContent = `${selectedAnimal} - Nome: ${name}, ${formattedAttributes}`;
+    animalList.appendChild(listItem);
+
+    // Limpar os campos do formulário
+    document.getElementById("name").value = "";
+    document.getElementById("raca").value = "";
+    document.getElementById("cor").value = "";
+}
+    </script>
+</body>
+</html>
+
+
+
