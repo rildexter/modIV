@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Classes em JavaScript</title>
+</head>
+<body>
+    <div id="resultado"></div>
+
+    <script>
+// Classe pai
+ class Animal {
+constructor(nome) {
+this.nome = nome;
+            }
+//vamos usar agora innerhtml e não .textContent = 
+fazerBarulho() {
+ document.getElementById('resultado').innerHTML += `${this.nome} faz um barulho.<br>`;
+            }
+        }
+
+// Classe filha que herda de Animal
+        class Gato extends Animal {
+            constructor(nome, cor) {
+                super(nome);
+                this.cor = cor;
+            }
+
+fazerBarulho() {
+ document.getElementById('resultado').innerHTML += `${this.nome} faz o som de um gato.<br>`;
+}
+
+mostrarCor() {
+document.getElementById('resultado').innerHTML +=
+`${this.nome} é da cor ${this.cor}.<br>`;
+            }
+        }
+
+        // Classe filha que herda de Animal
+        class Cachorro extends Animal {
+            constructor(nome, raca) {
+                super(nome);
+                this.raca = raca;
+            }
+
+            fazerBarulho() {
+                document.getElementById('resultado').innerHTML +=
+                `${this.nome} faz o som de um cachorro.<br>`;
+            }
+
+            mostrarRaca() {
+                document.getElementById('resultado').innerHTML +=
+                `${this.nome} é da raça ${this.raca}.<br>`;
+            }
+        }
+
+        // Exemplo de uso das classes
+        const garfield = new Gato('Garfield', 'laranja');
+        const beethoven = new Cachorro('Beethoven', 'São Bernardo');
+
+        garfield.fazerBarulho();
+        garfield.mostrarCor();
+
+        beethoven.fazerBarulho();
+        beethoven.mostrarRaca();
+    </script>
+</body>
+</html>

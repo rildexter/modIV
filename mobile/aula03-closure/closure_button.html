@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="resultado">Contador: 0</h1>
+    <button id="botao">Incrementar</button>
+    <script>
+        // Função externa que retorna uma função interna (closure)
+        function criarContador() {
+            let contador = 0;
+            // Função interna (closure) que acessa a variável 'contador'
+            function incrementar() {
+                contador++;
+                document.getElementById('resultado').textContent = `Contador: ${contador}`;
+            }
+            return incrementar;
+        }
+        // Cria um contador usando a função externa
+        const meuContador = criarContador();
+        // Associa a função interna ao evento de clique do botão
+        document.getElementById('botao').addEventListener('click', meuContador);
+    </script>
+</body>
+</html>

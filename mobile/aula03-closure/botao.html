@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>page</title>
+</head>
+<body>
+  <button id="meuBotao">Aperte Aqui</button>
+  <div id="meuId">Texto</div>
+  <script>
+  //ligação do dom ao script
+    const meuBotao = document.getElementById('meuBotao');
+  //evento de click no botão
+  meuBotao.addEventListener('click',function()
+  {
+    //selecionando o ID
+   const meuParagrafo = document.getElementById('meuId');
+   //modificando o conteudo
+   meuParagrafo.textContent = 'Apertou o botão';
+  });
+  </script>
+</body>
+</html>

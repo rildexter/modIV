@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>page</title>
+</head>
+<body>
+<h1 id="resultado">Contador: 0</h1>
+<button id="botao">Incrementar</button>
+  <script>
+  //função Externa
+  function criarContador(){
+    let contador = 0;
+    // função interna
+    function incrementar(){
+      contador++;
+      document.getElementById('resultado').textContent
+      ='Contador:'+ contador;
+      //=`Contador: ${contador} `;
+      
+    }
+    return incrementar;
+  }
+  const meuContador = criarContador();
+  document.getElementById('botao').addEventListener('click',meuContador);
+  </script>
+</body>
+</html>

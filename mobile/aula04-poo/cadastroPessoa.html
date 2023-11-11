@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Classe Pessoa</title>
+</head>
+<body>
+    <h1>Digite seu nome:</h1>
+    <input type="text" id="nomeInput">
+    <button onclick="exibirNome()">Exibir Nome</button>
+    <p id="resultado"></p>
+
+    <script>
+        class Pessoa {
+            constructor() {
+                this._nome = "";
+            }
+
+            get nome() {
+                return this._nome;
+            }
+
+            set nome(novoNome) {
+                this._nome = novoNome;
+            }
+        }
+
+        function exibirNome() {
+            const nomeInput = document.getElementById('nomeInput').value;
+            const pessoa = new Pessoa();
+            pessoa.nome = nomeInput;
+
+            const resultadoElemento = document.getElementById('resultado');
+            resultadoElemento.textContent = `Nome digitado: ${pessoa.nome}`;
+        }
+    </script>
+</body>
+</html>

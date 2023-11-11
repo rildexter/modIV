@@ -1,0 +1,25 @@
+//isso deve ser colocado no nodejs
+
+class Animal {
+  falar() {
+    console.log("O animal faz um som.");
+  }
+}
+
+class Cachorro extends Animal {
+  falar() {
+    console.log("O cachorro late.");
+  }
+}
+
+class Gato extends Animal {
+  falar() {
+    console.log("O gato mia.");
+  }
+}
+
+const animais = [new Cachorro(), new Gato()];
+
+animais.forEach(animal => {
+  animal.falar(); // Chamada polimórfica
+});
