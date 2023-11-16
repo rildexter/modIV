@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manipulação de Strings</title>
+</head>
+<body>
+   <button onclick="converterParaMaiusculas()">Converter para Maiúsculas</button>
+   <button onclick="converterParaMinusculas()">Converter para Minúsculas</button>
+   <button onclick="obterCaractere()">Obter Caractere posição 3</button>
+   <button onclick="concatenarStrings()">Concatenar texto a palavra concatenado</button>
+   <p id="resultadoStrings"></p>
+
+   <script>
+      let texto = "Exemplo de Texto";
+
+      function converterParaMaiusculas() {
+         document.getElementById('resultadoStrings').innerText = texto.toUpperCase();
+      }
+
+      function converterParaMinusculas() {
+         document.getElementById('resultadoStrings').innerText = texto.toLowerCase();
+      }
+
+      function obterCaractere() {
+         document.getElementById('resultadoStrings').innerText = texto.charAt(3);
+      }
+
+      function concatenarStrings() {
+         document.getElementById('resultadoStrings').innerText = texto + " Concatenado";
+      }
+   </script>
+</body>
+</html>

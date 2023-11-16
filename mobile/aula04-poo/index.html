@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Classe Pessoa</title>
+</head>
+<body>
+  <h1>Digite seu nome:</h1>
+  <input type="text" id="nomeInput">
+  <button onclick="exibirNome()">Exibir Nome</button>
+  <p id="resultado"></p>
+  
+  <script>
+  classPessoa(){
+    constructor(){
+      this._nome = "";
+    }
+    get nome(){
+      return this._nome;
+    }
+    set nome(novoNome){
+      this._nome = novoNome;
+    }
+  }
+  function exibirNome(){
+    const nomeInput = document.getElementById('nomeInput').value;
+   //instanciando o objeto
+    const pessoa =new Pessoa();
+    pessoa.nome = nomeInput;
+    
+    //levar resultado a tela - conectar DOM ao JSON
+  const resultadoElemento = document.getElementById('resultado');
+  resultadoElemento.textContent =`Nome digitado:${pessoa.nome}`;
+  }
+  </script>
+</body>
+</html>

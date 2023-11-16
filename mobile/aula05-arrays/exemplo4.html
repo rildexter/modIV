@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Expressões Regulares</title>
+</head>
+<body>
+   <!-- Parágrafo onde o texto inicial será exibido -->
+   <p id="textoOriginal">O padrão será 3-3-4. Os números são 123-456-7890 /
+     987-654-3210 / 555-1234 / 999-888-7777.</p>
+   <!-- Botão que aciona a função buscarNumeroTelefone() -->
+   <button onclick="buscarNumeroTelefone()">Buscar Número de Telefone</button>
+   <!-- Parágrafo onde o resultado será exibido -->
+   <p id="resultadoRegex"></p>
+
+   <script>
+      // Função para buscar números de telefone no texto
+      function buscarNumeroTelefone() {
+         // Obtém o texto original
+         let texto = document.getElementById('textoOriginal').innerText;
+         // Expressão regular para procurar o padrão ###-###-####
+         let padrao = /\d{3}-\d{3}-\d{4}/g; // Adicionado 'g' para buscar todas as ocorrências
+         // Utiliza o método match para encontrar o padrão no texto
+         let resultados = texto.match(padrao);
+
+         // Exibe os resultados no elemento HTML com o ID 'resultadoRegex', cada número em uma linha
+         //resultados.join('\n') está sendo usado para concatenar os elementos do array resultados em
+         // uma string, onde cada elemento é separado por \n. 
+         document.getElementById('resultadoRegex').innerText = `Números de Telefone Encontrados:\n${resultados.join('\n')}`;
+      }
+   </script>
+</body>
+</html>
+
+

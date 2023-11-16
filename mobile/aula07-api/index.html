@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <style>
+        /* Adicione estilos conforme necessário */
+    </style>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    
+    <!-- Selecione a moeda de origem -->
+    <label for="fromCurrency">Escolha a moeda de origem:</label>
+    <select id="fromCurrency">
+        <option value="BRL">Real Brasileiro (BRL)</option>
+        <option value="USD">Dólar Americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <!-- Insira o valor a ser convertido -->
+    <label for="amount">Digite o valor:</label>
+    <input type="number" id="amount" placeholder="Digite o valor">
+
+    <!-- Selecione a moeda de destino -->
+    <label for="toCurrency">Escolha a moeda de destino:</label>
+    <select id="toCurrency">
+        <option value="BRL">Real Brasileiro (BRL)</option>
+        <option value="USD">Dólar Americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <!-- Botão para iniciar a conversão -->
+    <button onclick="convertCurrency()">Converter</button>
+
+    <!-- Exiba o resultado da conversão -->
+    <p id="result">O resultado aparecerá aqui</p>
+
+    <!-- Script JavaScript para a lógica de conversão -->
+    <script>
+        // Função para realizar a conversão
+        function convertCurrency() {
+            // Obtenha os valores selecionados e o valor a ser convertido
+            const amount = document.getElementById('amount').value;
+            const fromCurrency = document.getElementById('fromCurrency').value;
+            const toCurrency = document.getElementById('toCurrency').value;
+
+            // Construa a URL da API com a moeda de origem
+            const apiUrl = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+
+            // Faça a requisição para a API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Obtenha a taxa de câmbio para a moeda de destino
+                    const exchangeRate = data.rates[toCurrency];
+                    // Calcule o valor convertido
+                    const convertedAmount = (amount * exchangeRate).toFixed(2);
+
+                    // Exiba o resultado
+                    document.getElementById('result').innerText = `${amount} ${fromCurrency} = 
+                    ${convertedAmount} ${toCurrency}`;
+                })
+                .catch(error => console.error('Erro na conversão:', error));
+        }
+    </script>
+</body>
+</html>

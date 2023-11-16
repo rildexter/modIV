@@ -1,0 +1,20 @@
+[
+    {
+        "nome_filme": "Pulp Fiction",
+        "ano_filme": 1994,
+        "diretor": "Quentin Tarantino",
+        "genero": "Crime"
+    },
+    {
+        "nome_filme": "Clube da Luta",
+        "ano_filme": 1999,
+        "diretor": "David Fincher",
+        "genero": "Drama"
+    },
+    {
+        "nome_filme": "Interestelar",
+        "ano_filme": 2014,
+        "diretor": "Christopher Nolan",
+        "genero": "Ficção Científica"
+    }
+]

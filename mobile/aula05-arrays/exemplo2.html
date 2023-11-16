@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Métodos Avançados de Arrays</title>
+</head>
+<body>
+   <button onclick="criarNovoArray()">Criar Novo Array</button>
+   <p id="resultadoAvancado"></p>
+
+   <script>
+      let numeros = [1, 2, 3, 4, 5];
+
+      function criarNovoArray() {
+         // Usando map para multiplicar cada elemento por 2
+         // Neste caso, a função é (elemento) => elemento * 2. 
+         //Isso significa que para cada elemento no array numeros, 
+         //a função é aplicada, multiplicando cada elemento por 2.
+         let novoArrayMap = numeros.map((elemento) => elemento * 2);
+         mostrarFases(novoArrayMap, "Após usar map para multiplicar cada elemento por 2");
+
+         // Usando filter para manter apenas os números pares
+         let novoArrayFilter = novoArrayMap.filter((elemento) => elemento % 2 === 0);
+         mostrarFases(novoArrayFilter, "Após usar filter para manter apenas os números pares");
+
+         // Usando reduce para somar todos os elementos
+         let soma = novoArrayFilter.reduce((acumulador, elemento) => acumulador + elemento, 0);
+         mostrarFases(soma, "Após usar reduce para somar todos os elementos");
+
+ }
+
+      function mostrarFases(resultado, mensagem) {
+         let resultadoAtual = document.getElementById('resultadoAvancado').innerText;
+         let novaMensagem = mensagem ? `\n${mensagem}` : '';
+         document.getElementById('resultadoAvancado').innerText = `${resultadoAtual}\n${resultado}${novaMensagem}`;
+      }
+   </script>
+</body>
+</html>
+
