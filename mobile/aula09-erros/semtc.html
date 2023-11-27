@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Raiz Quadrada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <label for="numberInput">Digite um número:</label>
+    <input type="text" id="numberInput">
+    <button onclick="calculateSquareRoot()">Calcular Raiz Quadrada</button>
+    <p id="result"></p>
+    
+  </div>
+
+  <script>
+    function calculateSquareRoot() {
+      // Limpa mensagens de erro anteriores
+      document.getElementById('result').textContent = ''; // Limpa o resultado anterior
+
+      // Obtém o valor inserido pelo usuário
+      const userInput = document.getElementById('numberInput').value;
+
+      // Converte a entrada para um número
+      const number = parseFloat(userInput);
+
+      // Calcula a raiz quadrada e exibe o resultado
+      const result = Math.sqrt(number);
+      document.getElementById('result').textContent = 
+      `A raiz quadrada de ${number} é: ${result.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

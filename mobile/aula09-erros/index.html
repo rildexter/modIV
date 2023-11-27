@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Raiz Quadrada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <label for="numberInput">Digite um número:</label>
+    <input type="text" id="numberInput">
+    <button onclick="calculateSquareRoot()">Calcular Raiz Quadrada</button>
+    <p id="result"></p>
+    <p id="error"></p>
+  </div>
+
+  <script>
+    function calculateSquareRoot() {
+  // Limpa mensagens de erro anteriores
+  document.getElementById('error').textContent = '';
+  
+  // Obtém o valor inserido pelo usuário
+  const userInput = document.getElementById('numberInput').value;
+
+  try {
+    // Converte a entrada para um número
+    const number = parseFloat(userInput);
+
+    // Verifica se a entrada é um número válido
+    if (isNaN(number)) {
+      throw new Error('Por favor, insira um número válido.');
+    }
+
+    // Verifica se o número é não negativo antes de calcular a raiz quadrada
+    if (number < 0) {
+      throw new Error('Não é possível calcular a raiz quadrada de um número negativo.');
+    }
+
+    // Calcula a raiz quadrada e exibe o resultado
+    const result = Math.sqrt(number);
+    document.getElementById('result').textContent = 
+    `A raiz quadrada de ${number} é: ${result.toFixed(2)}`;
+  } catch (error) {
+    // Captura e exibe mensagens de erro
+    document.getElementById('error').textContent = `Erro: ${error.message}`;
+  }
+}
+  </script>
+</body>
+</html>
