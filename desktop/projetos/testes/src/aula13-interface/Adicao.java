@@ -1,30 +1,25 @@
 import javax.swing.JOptionPane;
 
-public class Adicao {
-    public static void main(String args[]) {
-        String firstNumber; // primeira string digitada pelo usuário
-        String secondNumber; // segunda string digitada pelo usuário
-        int number1; // primeiro número
-        int number2; // segundo número
-        int sum; // soma
+public class Adicao{
+    public static void main(String[] args) {
+        String firstNumber;
+        String secondNumber;
+        int number1;
+        int number2;
+        int sum;
 
-        // lê o primeiro número como uma string
-        firstNumber = JOptionPane.showInputDialog("Digite o primeiro numero:");
+     firstNumber = 
+     JOptionPane.showInputDialog("Digite o Primeiro Número:");
+     secondNumber = 
+     JOptionPane.showInputDialog("Digite o Segundo Número:");
 
-        // lê o segundo número como uma string
-        secondNumber = JOptionPane.showInputDialog("Digite o segundo numero:");
+    number1= Integer.parseInt(firstNumber);
+    number2= Integer.parseInt(secondNumber);
+    sum=number1+number2;
 
-        // converte os números de String para int
-        number1 = Integer.parseInt(firstNumber);
-        number2 = Integer.parseInt(secondNumber);
-
-        // adiciona os números
-        sum = number1 + number2;
-
-        // mostra o resultado
-        JOptionPane.showMessageDialog(null, "A soma sera " + sum, "Resultado", JOptionPane.PLAIN_MESSAGE);
-
-        System.exit(0);
+    JOptionPane.showMessageDialog
+    (null,"A soma será "+sum, 
+    "Resultado",JOptionPane.PLAIN_MESSAGE);
+    System.exit(0);
     }
 }
-
