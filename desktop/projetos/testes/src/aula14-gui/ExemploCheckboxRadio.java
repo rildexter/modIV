@@ -41,7 +41,8 @@ public class ExemploCheckboxRadio extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(ExemploCheckboxRadio.this, 
-                "Opção selecionada: " + ((JRadioButton) e.getSource()).getText());
+                "Opção selecionada: " + 
+                ((JRadioButton) e.getSource()).getText());
             }
         };
 

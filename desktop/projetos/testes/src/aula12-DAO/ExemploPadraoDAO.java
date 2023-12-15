@@ -15,6 +15,19 @@ class Usuario {
     public String toString() {
         return "Usuario{id=" + id + ", nome='" + nome + "', email='" + email + "'}";
     }
+
+    public Integer getId() {
+        return null;
+    }
+
+    public void setId(int i) {
+    }
+
+    public void setNome(String string) {
+    }
+
+    public void setEmail(String string) {
+    }
 }
 
 // Interface DAO

@@ -8,7 +8,7 @@ public class ExemploInterfaceGrafica extends JFrame {
     private JTextField campoTexto;
 
     public ExemploInterfaceGrafica() {
-        setTitle("Exemplo de Interface Gráfica");
+        setTitle("Interface Gráfica");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -27,8 +27,8 @@ public class ExemploInterfaceGrafica extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String textoDigitado = campoTexto.getText();
-                JOptionPane.showMessageDialog(ExemploInterfaceGrafica.this, "Você digitou: "
-                 + textoDigitado);
+JOptionPane.showMessageDialog(ExemploInterfaceGrafica.this, 
+"Você digitou: "+ textoDigitado);
             }
         });
         add(botao);
@@ -39,7 +39,8 @@ public class ExemploInterfaceGrafica extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            ExemploInterfaceGrafica exemplo = new ExemploInterfaceGrafica();
+            ExemploInterfaceGrafica exemplo = 
+            new ExemploInterfaceGrafica();
             exemplo.setVisible(true);
         });
     }
